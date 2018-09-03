@@ -60,3 +60,35 @@ Function.prototype.applyone=function(target){
 	delete target.m;
 };
 jawil.sayHello.applyone(lulin,[24,32,34,54]);
+//全面考虑了以下四种情况：（1）第一个参数没有或者为null时（2）没有参数传入时（3）指定方法存在返回值时，用变量将计算的结果进行缓存返回
+//（4）当目标对象中已经存在了要指定的属性名或方法名
+ var jawil={
+	name:"jawil",
+	sayHello:function(age){
+		return {
+			name:this.name,
+			age:age
+		}
+	}
+};
+var lulin={
+	name:"lulin"
+};
+Function.prototype.applyone=function(target){
+	target=target||window;  //第一个参数没有或者为null时
+	var m=Symbol();	       //（4）当目标对象中已经存在了要指定的属性名或方法名
+	target[m]=this;
+	var arg=arguments[1];
+	if(arg.length===0){   //（2）没有参数传入时
+		return target.m();
+	}
+	var str='target[m](';
+	for(var i=0,len=arg.length;i<len;i++){
+		str+=i!==len-1?arg[i]+',':arg[i];
+	}
+	var str1=str+')';
+	var result=eval(str1); //（3）指定方法存在返回值时，用变量将计算的结果进行缓存返回
+	delete target.m;
+	return result;
+};
+jawil.sayHello.applyone(lulin,[24,32,34,54]);

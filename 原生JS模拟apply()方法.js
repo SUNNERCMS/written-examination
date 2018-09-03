@@ -38,3 +38,25 @@ Function.prototype.applyone=function(target){
 };
 jawil.sayHello.applyone(lulin,[24]);
 VM327:4 lulin:24
+//当传入的数组参数里面的元素不止一个时，怎么把这些值以参数的形式传递给指定方法，第三种情况
+ var jawil={
+	name:"jawil",
+	sayHello:function(age){
+		console.log(this.name+":"+age);
+	}
+};
+var lulin={
+	name:"lulin"
+};
+Function.prototype.applyone=function(target){
+	var arg=arguments[1];
+	var str='target.m(';
+	for(var i=0,len=arg.length;i<len;i++){
+		str+=i!==len-1?arg[i]+',':arg[i];
+	}
+	var str1=str+')'; //得到"target.m(arg1,arg2,arg3...)"这个字符串在，最后用eval执行
+	target.m=this;
+	eval(str1); //可以处理字符串中的表达式
+	delete target.m;
+};
+jawil.sayHello.applyone(lulin,[24,32,34,54]);

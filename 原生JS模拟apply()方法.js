@@ -1,3 +1,4 @@
+//参考链接：https://segmentfault.com/a/1190000009265185?utm_source=tuicool&utm_medium=referral
 //f.call(o)其原理就是先通过 o.m = f 将 f作为o的某个临时属性m存储，然后执行m，执行完毕后将m属性删除。
 //  o.m=f;
 //  o.m();

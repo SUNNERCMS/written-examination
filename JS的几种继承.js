@@ -18,8 +18,7 @@ function Animal (name) {
 Animal.prototype.eat = function(food) {
   console.log(this.name + '正在吃：' + food);
 };
-1、原型链继承
-核心： 将父类的实例作为子类的原型
+1、原型链继承核心： 将父类的实例作为子类的原型
 
 function Cat(){ 
 }
@@ -33,20 +32,17 @@ console.log(cat.eat('fish'));
 console.log(cat.sleep());
 console.log(cat instanceof Animal); //true 
 console.log(cat instanceof Cat); //true
-特点：
 
+特点：
 非常纯粹的继承关系，实例是子类的实例，也是父类的实例
 父类新增原型方法/原型属性，子类都能访问到
 简单，易于实现
 缺点：
-
-要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中
+可以在Cat构造函数中，为Cat实例增加实例属性。如果要新增原型属性和方法，则必须放在new Animal()这样的语句之后执行。
 无法实现多继承
 来自原型对象的引用属性是所有实例共享的（详细请看附录代码： 示例1）
 创建子类实例时，无法向父类构造函数传参
 推荐指数：★★（3、4两大致命缺陷）
-
-2017-8-17 10:21:43补充：感谢 MMHS 指出。缺点1中描述有误：可以在Cat构造函数中，为Cat实例增加实例属性。如果要新增原型属性和方法，则必须放在new Animal()这样的语句之后执行。
 
 2、构造继承
 核心：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）
@@ -90,7 +86,7 @@ console.log(cat.sleep());
 console.log(cat instanceof Animal); // true
 console.log(cat instanceof Cat); // false
 特点：
-
+可以继承父类的原型方法
 不限制调用方式，不管是new 子类()还是子类(),返回的对象具有相同的效果
 缺点：
 

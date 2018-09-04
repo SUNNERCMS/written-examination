@@ -93,3 +93,4 @@ Function.prototype.applyone=function(target){
 	return result;
 };
 jawil.sayHello.applyone(lulin,[24,32,34,54]);
+---{name: "lulin", age: 24}

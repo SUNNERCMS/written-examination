@@ -34,14 +34,15 @@ dp(str1,10,str2,12);
 //参考文档：https://segmentfault.com/a/1190000012864957
 //////////////////////////////////////
 function LCS(str1, str2){
-        var rows =  str1.split("")
-        rows.unshift("")
+        var rows =  str1.split("")  //将字符串分割成数组
+        rows.unshift("")           //数组前面添加一个空字符串
         var cols =  str2.split("")
         cols.unshift("")
         var m = rows.length 
         var n = cols.length 
-        var dp = []
+        var dp = [] 
         for(var i = 0; i < m; i++){ 
+            dp[i] = []
             dp[i] = []
             for(var j = 0; j < n; j++){ 
                 if(i === 0 || j === 0){

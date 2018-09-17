@@ -1,4 +1,7 @@
-    function map(n) {
+  // http://www.php.cn/js-tutorial-382050.html
+
+
+function map(n) {
       this.map = [], this.row = 0, this.col = -1, this.dir = 0, this.n = n;
       // 建立个二维数组
       for (var i = 0; i < this.n; i++) { this.map.push([]); }

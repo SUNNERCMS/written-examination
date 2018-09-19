@@ -12,4 +12,4 @@ new Promise(function(resolve){
 	console.log(4);
 });
 console.log(5);
-//输出结果为23541
+//输出结果为2 3 5 4 1

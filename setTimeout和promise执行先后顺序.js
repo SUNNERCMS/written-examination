@@ -12,6 +12,8 @@ new Promise(function(resolve){
 	console.log(4);
 });
 console.log(5);
+//分析：promise中只有当栈中的所有的语句执行完之后，才会调用resolve回调函数
+//promise属于微任务，而setTimeout属于宏任务，在任务队列中微任务优先于宏任务执行
 //输出结果为2 3 5 4 1
 
 //拼多多

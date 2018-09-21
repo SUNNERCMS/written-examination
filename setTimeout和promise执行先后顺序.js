@@ -15,3 +15,11 @@ console.log(5);
 //输出结果为2 3 5 4 1
 
 //拼多多
+promise=new Promise((resolve,reject)=>{
+	console.log('a');
+	resolve();
+	console.log('b');
+});
+promise.then(()=>{console.log('c');});
+console.log('d');
+//输出结果为a b d c

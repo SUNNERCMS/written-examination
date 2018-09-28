@@ -25,3 +25,11 @@ promise=new Promise((resolve,reject)=>{
 promise.then(()=>{console.log('c');});
 console.log('d');
 //输出结果为a b d c
+
+//深信服
+for(var i=0;i<5;i++){
+	setTimeout(function(){
+		console.log(i);
+	},1000)
+}
+//疑问点在于是一次性输出5个5，还是间隔输出

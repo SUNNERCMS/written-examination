@@ -8,5 +8,3 @@
   } 
  }
 instance_of(Object, Object)
-
-

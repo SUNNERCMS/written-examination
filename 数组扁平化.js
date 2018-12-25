@@ -14,7 +14,7 @@ const tree=['a',['b','c'],['d','e']];
 for(let x of iterTree(tree)){
   console.log(x);
 }
-//--->
+//--->输出结果
   //a
   //b
   //c

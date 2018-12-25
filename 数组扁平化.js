@@ -19,3 +19,4 @@ for(let x of iterTree(tree)){
   //b
   //c
   //d
+  //e
